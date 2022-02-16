@@ -9,15 +9,30 @@
     
 </head>
 <body>
-    <div class="blog" dir="rtl" >
-        <div class="box bottom-border"> ردیف</div>
-        <div class="box right-border bottom-border">نام</div>
-        <div class="box right-border bottom-border">شهر</div>
-        <div class="box right-border bottom-border">کشور</div>
-        <div class="box right-border bottom-border ">سن</div>
-        <div class="box right-border bottom-border">ویرایش</div>
-        <div class="box right-border bottom-border">حذف</div>
-    </div>
+ 
+
+    <table class="blog" dir="rtl" id="table"
+    style="width:80%">
+      <tr>
+        <th>ردیف</th>
+        <th>نام</th>
+        <th>شهر</th>
+        <th>کشور</th>
+        <th>سن</th>
+        <th>ویرایش</th>
+        <th>حذف</th>
+      </tr>
+     
+    </table>
+    
+
+
+    <button id="submit" onclick="addRow()">Add Task</button>
+    
+
+
+
+
 
     <script src="main.js"></script>
 </body>
