@@ -9,7 +9,7 @@
 <body dir="rtl" style="display: flex; justify-content: center; margin-top: 10%;">
     <div style="width:350px" >
 
-        <form action="http://127.0.0.1:5500/index1.html" method="post"> 
+        <form  > 
             <fieldset>
                 <legend><b>فرم ثبت نام</b></legend>
 
@@ -17,26 +17,22 @@
                    
                 <tr>
                     <th><label>نام:</label></th>
-                    <td><input type="text" placeholder="نام خود را وارد کنید" name="firstname"></td>                    
+                    <td><input type="text" placeholder="نام خود را وارد کنید" name="name" id="name"></td>                    
                 </tr>
-                <tr>
-                    <th><label>نام خانوادگی:</label></th>
-                    <td><input type="text" placeholder="نام خانوادگی خود را وارد کنید" name="lasttname"></td>
-            
-                </tr>
+              
                 <tr>
                     <th><label>شهر: </label></th>
-                    <td><input type="text" placeholder="" name="city"></td>
+                    <td><input type="text" placeholder="" name="city" id="city"></td>
             
                 </tr>
                 <tr>
                     <th><label>کشور:</label></th>
-                    <td><input type="text" placeholder=" " name="country" ></td>
+                    <td><input type="text" placeholder=" " name="country" id="country" ></td>
             
                 </tr>
                 <tr>
-                    <th><label for="sen">سن: </label></th>
-                    <td><select name="sen" id="sen"> 
+                    <th><label for="age">سن: </label></th>
+                    <td><select name="age" id="age"> 
                         <option value=""> 20 </option>
                         <option value=""> 21 </option>
                         <option value=""> 22 </option>
@@ -63,15 +59,15 @@
                 <tr></tr>
 
                 <tr>
-                    
-                    <td colspan="2"><button type="submit" name="ersal"> ارسال</button> 
+                    <td ><button type="submit" id="submit" > ارسال</button> 
                     </td>
-                    <td ><button type="reset" name="pak"> پاک کردن</button></td>
+                    <td ><button type="reset" id="remove" class="remove"> پاک کردن</button></td>
                     
                 </tr>
 
              </table>
         </form> 
+        <script src="main.js"></script>
 </div>
 </body>
 </html>
