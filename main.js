@@ -1,97 +1,97 @@
 
 
- let row_number = 1;
+//  let row_number = 1;
 
-function addRow () {
+// function addRow () {
   
-       var table = document.getElementById("table");
-       var row = table.insertRow();
+//        var table = document.getElementById("table");
+//        var row = table.insertRow();
 
-       var cell1 = row.insertCell(0);
-       cell1.innerHTML = row_number;
+//        var cell1 = row.insertCell(0);
+//        cell1.innerHTML = row_number;
 
-       var cell2 = row.insertCell(1); 
-       var element2 = document.createElement("input");
-			 element2.type = "text";
-			 element2.name = "txtbox[]";
-			 cell2.appendChild(element2);
+//        var cell2 = row.insertCell(1); 
+//        var element2 = document.createElement("input");
+// 			 element2.type = "text";
+// 			 element2.name = "txtbox[]";
+// 			 cell2.appendChild(element2);
 
-       var cell3 = row.insertCell(2);  
-        var element3 = document.createElement("input");
-			 element3.type = "text";
-			 element3.name = "txtbox[]";
-			 cell3.appendChild(element3);
+//        var cell3 = row.insertCell(2);  
+//         var element3 = document.createElement("input");
+// 			 element3.type = "text";
+// 			 element3.name = "txtbox[]";
+// 			 cell3.appendChild(element3);
 
-       var cell4 = row.insertCell(3);  
-       var element4 = document.createElement("input");
-			 element4.type = "text";
-			 element4.name = "txtbox[]";
-			 cell4.appendChild(element4);
+//        var cell4 = row.insertCell(3);  
+//        var element4 = document.createElement("input");
+// 			 element4.type = "text";
+// 			 element4.name = "txtbox[]";
+// 			 cell4.appendChild(element4);
 
-       var cell5 = row.insertCell(4);  
-       var element5= document.createElement("input");
-			 element5.type = "text";
-			 element5.name = "txtbox[]";
-			 cell5.appendChild(element5);
+//        var cell5 = row.insertCell(4);  
+//        var element5= document.createElement("input");
+// 			 element5.type = "text";
+// 			 element5.name = "txtbox[]";
+// 			 cell5.appendChild(element5);
 
 
-       var cell6 = row.insertCell(5);
-       var element6 = document.createElement("button");
-			 element6.type = "button";
-			 element6.name="edit";
-       element6.innerHTML = "ویرایش";
-       element6.style.width=`50px`;
-       element6.style.height=`20px`;
-			 cell6.appendChild(element6);  
+//        var cell6 = row.insertCell(5);
+//        var element6 = document.createElement("button");
+// 			 element6.type = "button";
+// 			 element6.name="edit";
+//        element6.innerHTML = "ویرایش";
+//        element6.style.width=`50px`;
+//        element6.style.height=`20px`;
+// 			 cell6.appendChild(element6);  
 
-       var cell7 = row.insertCell(6); 
-       var element7 = document.createElement("button");
-			 element7.type = "button";
-			 element7.name="delete";
-       element7.innerHTML = "حذف";
-       element7.style.width=`50px`;
-       element7.style.height=`20px`;
-			 cell7.appendChild(element7);
+//        var cell7 = row.insertCell(6); 
+//        var element7 = document.createElement("button");
+// 			 element7.type = "button";
+// 			 element7.name="delete";
+//        element7.innerHTML = "حذف";
+//        element7.style.width=`50px`;
+//        element7.style.height=`20px`;
+// 			 cell7.appendChild(element7);
 
-       var cell8 = row.insertCell(7);  
-       var element8= document.createElement("button");
-			 element8.type = "button";
-			 element8.name = "save";
-       element8.innerHTML = "ذخیره";
-       element8.style.width=`50px`;
-       element8.style.height=`20px`;
-			 cell8.appendChild(element8); 
+//        var cell8 = row.insertCell(7);  
+//        var element8= document.createElement("button");
+// 			 element8.type = "button";
+// 			 element8.name = "save";
+//        element8.innerHTML = "ذخیره";
+//        element8.style.width=`50px`;
+//        element8.style.height=`20px`;
+// 			 cell8.appendChild(element8); 
       
-  row_number += 1;
+//   row_number += 1;
 
 
 
 
-  element8.addEventListener('click', () => {
+  // element8.addEventListener('click', () => {
     
-    let person= {
-      name :cell2.innerHTML,
-      country : cell3.innerHTML,
-      age: cell4.innerHTML,
-      city :cell5.innerHTML,
-    }
-    console.log(person)
-  });
+  //   let person= {
+  //     name :cell2.innerHTML,
+  //     country : cell3.innerHTML,
+  //     age: cell4.innerHTML,
+  //     city :cell5.innerHTML,
+  //   }
+  //   console.log(person)
+  // });
 
 
-}
+// }
 
 
 
-var cell = document.getElementsByTagName('td');
-for (var i=2; i<6; i++) {
-   cell[i].onclick = function() {
-      var data = this.getAttribute('data-cell');
-      editEvent = document.getElementById('addevent');//The pop-up window
-      editEvent.style.cssText ='display: block;';
-      this.style.position = 'relative';
+// var cell = document.getElementsByTagName('td');
+// for (var i=2; i<6; i++) {
+//    cell[i].onclick = function() {
+//       var data = this.getAttribute('data-cell');
+//       editEvent = document.getElementById('addevent');//The pop-up window
+//       editEvent.style.cssText ='display: block;';
+//       this.style.position = 'relative';
 
-      this.innerHTML = " "//??? I want the inputs data to be inserted here
+//       this.innerHTML = " "//??? I want the inputs data to be inserted here
 
 
 
@@ -110,3 +110,30 @@ for (var i=2; i<6; i++) {
 
 
 
+const formElement= document.querySelector("form")
+const tbodyElement= document.querySelector("tbody")
+let rowNumber=1
+
+function addingProfile(e){
+  e.preventDefault();
+  
+  const name =document.getElementById(`name`).value;
+  const city =document.getElementById(`city`).value;
+  const country =document.getElementById(`country`).value;
+  const age =document.getElementById(`age`).value;
+  
+  tbodyElement.innerHTML+=`
+      <tr>
+      <td>${rowNumber}</td>
+      <td> ${name} </td>
+      <td> ${city} </td>
+      <td> ${country} </td>
+      <td> ${age} </td>
+      <td><button class="DeleteBtn">حذف</button></td>
+      
+      </tr>  
+  `;
+  rowNumber+=1;
+}
+
+formElement.addEventListener("submit",addingProfile);
