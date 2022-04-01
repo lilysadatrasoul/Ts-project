@@ -112,6 +112,8 @@
 
 const formElement= document.querySelector("form")
 const tbodyElement= document.querySelector("tbody")
+const tableElement = document.querySelector(`table`)
+
 let rowNumber=1
 
 function addingProfile(e){
@@ -124,16 +126,50 @@ function addingProfile(e){
   
   tbodyElement.innerHTML+=`
       <tr>
-      <td>${rowNumber}</td>
-      <td> ${name} </td>
-      <td> ${city} </td>
-      <td> ${country} </td>
-      <td> ${age} </td>
-      <td><button class="DeleteBtn">حذف</button></td>
+      <td style="width:5%"> ${rowNumber} </td>
+      <td style="width:20%"> ${name} </td>
+      <td style="width:15%"> ${city} </td>
+      <td style="width:15%"> ${country} </td>
+      <td style="width:8%"> ${age} </td>
+      <td  style="width:3%"><button class="DeleteBtn" style="border:none">حذف</button></td>
+      <td  style="width:3%"><button class="EditBtn" style="border:none" >ویرایش</button></td>
+
       
       </tr>  
   `;
   rowNumber+=1;
 }
 
+function deleteRow(e){
+  if(!e.target.classList.contains("DeleteBtn")){
+    return;
+  }
+  e.target.closest("tr").remove();
+
+}
+function editRow(e){
+  if(!e.target.classList.contains("EditBtn")){
+    return;
+  } 
+  else if (e.target.textContent==="ویرایش"){
+  document.getElementById(`name`).value= e.target.closest("tr").children[1].innerHTML;
+  document.getElementById(`city`).value=e.target.closest("tr"). children[2].innerHTML;
+  document.getElementById(`country`).value=e.target.closest("tr").children[3].innerHTML;
+  document.getElementById(`age`).value=e.target.closest("tr").children[4].innerHTML;
+  e.target.textContent="ذخیره";
+  }
+  else if (e.target.textContent==="ذخیره"){
+  e.target.closest("tr").children[1].innerHTML=  document.getElementById(`name`).value;
+  e.target.closest("tr"). children[2].innerHTML= document.getElementById(`city`).value;
+  e.target.closest("tr").children[3].innerHTML=document.getElementById(`country`).value;
+  e.target.closest("tr").children[4].innerHTML=document.getElementById(`age`).value;
+  e.target.textContent="ویرایش";
+  }
+
+
+}
+
+
 formElement.addEventListener("submit",addingProfile);
+tableElement.addEventListener("click", deleteRow );
+tableElement.addEventListener("click", editRow );
