@@ -113,28 +113,37 @@
 const formElement= document.querySelector("form")
 const tbodyElement= document.querySelector("tbody")
 const tableElement = document.querySelector(`table`)
-
+let data=[]
 let rowNumber=1
 
 function addingProfile(e){
   e.preventDefault();
-  
-  const name =document.getElementById(`name`).value;
-  const city =document.getElementById(`city`).value;
-  const country =document.getElementById(`country`).value;
-  const age =document.getElementById(`age`).value;
-  
+
+  let person = {
+    name :document.getElementById(`name`).value,
+    city :document.getElementById(`city`).value,
+    country :document.getElementById(`country`).value,
+    age :document.getElementById(`age`).value
+    };
+
+   data.push(
+    person
+       );
+
+    addRow(person);
+  }
+
+ function addRow (r){    
+
   tbodyElement.innerHTML+=`
       <tr>
       <td style="width:5%"> ${rowNumber} </td>
-      <td style="width:20%"> ${name} </td>
-      <td style="width:15%"> ${city} </td>
-      <td style="width:15%"> ${country} </td>
-      <td style="width:8%"> ${age} </td>
+      <td style="width:20%">${r.name} </td>
+      <td style="width:15%"> ${r.city} </td>
+      <td style="width:15%"> ${r.country} </td>
+      <td style="width:8%"> ${r.age} </td>
       <td  style="width:3%"><button class="DeleteBtn" style="border:none">حذف</button></td>
       <td  style="width:3%"><button class="EditBtn" style="border:none" >ویرایش</button></td>
-
-      
       </tr>  
   `;
   rowNumber+=1;
@@ -173,3 +182,7 @@ function editRow(e){
 formElement.addEventListener("submit",addingProfile);
 tableElement.addEventListener("click", deleteRow );
 tableElement.addEventListener("click", editRow );
+
+
+
+
